@@ -1,0 +1,3 @@
+[submodule "submodules/BooruDotNet"]
+	path = submodules/BooruDotNet
+	url = https://github.com/n-ski/BooruDotNet.git
