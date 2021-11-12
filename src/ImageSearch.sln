@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31529.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{857080C4-D834-49CE-8CCA-853D8CAB2CEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BooruDotNet", "BooruDotNet", "{1617730D-5C5D-4103-A0A6-E77EF8D92B51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet", "..\submodules\BooruDotNet\src\BooruDotNet\BooruDotNet.csproj", "{2D39BCE0-3582-497B-97DB-B79EA251BEC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Caching", "..\submodules\BooruDotNet\src\BooruDotNet.Caching\BooruDotNet.Caching.csproj", "{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Danbooru", "..\submodules\BooruDotNet\src\BooruDotNet.Danbooru\BooruDotNet.Danbooru.csproj", "{FA8954F9-B287-48EE-A426-AB16415555BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Downloaders", "..\submodules\BooruDotNet\src\BooruDotNet.Downloaders\BooruDotNet.Downloaders.csproj", "{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Gelbooru", "..\submodules\BooruDotNet\src\BooruDotNet.Gelbooru\BooruDotNet.Gelbooru.csproj", "{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Konachan", "..\submodules\BooruDotNet\src\BooruDotNet.Konachan\BooruDotNet.Konachan.csproj", "{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Links", "..\submodules\BooruDotNet\src\BooruDotNet.Links\BooruDotNet.Links.csproj", "{D6E07EFD-42AB-4458-9DC6-4A69C85C108D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Namers", "..\submodules\BooruDotNet\src\BooruDotNet.Namers\BooruDotNet.Namers.csproj", "{9493E26B-239C-45B3-8B6F-22554D96CA6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.SankakuComplex", "..\submodules\BooruDotNet\src\BooruDotNet.SankakuComplex\BooruDotNet.SankakuComplex.csproj", "{1119409D-1BF5-4F55-893F-98AE2CE849DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Search", "..\submodules\BooruDotNet\src\BooruDotNet.Search\BooruDotNet.Search.csproj", "{FFA06C2A-49E6-4892-A4C6-7917F9081CCC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Yandere", "..\submodules\BooruDotNet\src\BooruDotNet.Yandere\BooruDotNet.Yandere.csproj", "{5218271A-CED8-4322-8101-B0D5B4077BD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED083913-55BC-4A56-A362-3801BA91D616}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D39BCE0-3582-497B-97DB-B79EA251BEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D39BCE0-3582-497B-97DB-B79EA251BEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D39BCE0-3582-497B-97DB-B79EA251BEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D39BCE0-3582-497B-97DB-B79EA251BEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8954F9-B287-48EE-A426-AB16415555BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8954F9-B287-48EE-A426-AB16415555BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8954F9-B287-48EE-A426-AB16415555BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8954F9-B287-48EE-A426-AB16415555BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E07EFD-42AB-4458-9DC6-4A69C85C108D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E07EFD-42AB-4458-9DC6-4A69C85C108D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E07EFD-42AB-4458-9DC6-4A69C85C108D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E07EFD-42AB-4458-9DC6-4A69C85C108D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9493E26B-239C-45B3-8B6F-22554D96CA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9493E26B-239C-45B3-8B6F-22554D96CA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9493E26B-239C-45B3-8B6F-22554D96CA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9493E26B-239C-45B3-8B6F-22554D96CA6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1119409D-1BF5-4F55-893F-98AE2CE849DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1119409D-1BF5-4F55-893F-98AE2CE849DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1119409D-1BF5-4F55-893F-98AE2CE849DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1119409D-1BF5-4F55-893F-98AE2CE849DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA06C2A-49E6-4892-A4C6-7917F9081CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA06C2A-49E6-4892-A4C6-7917F9081CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA06C2A-49E6-4892-A4C6-7917F9081CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA06C2A-49E6-4892-A4C6-7917F9081CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5218271A-CED8-4322-8101-B0D5B4077BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5218271A-CED8-4322-8101-B0D5B4077BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5218271A-CED8-4322-8101-B0D5B4077BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5218271A-CED8-4322-8101-B0D5B4077BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1617730D-5C5D-4103-A0A6-E77EF8D92B51} = {857080C4-D834-49CE-8CCA-853D8CAB2CEE}
+		{2D39BCE0-3582-497B-97DB-B79EA251BEC0} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{C46AD72A-4569-41B7-9BBD-54DD5E4B8E95} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{FA8954F9-B287-48EE-A426-AB16415555BF} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{B3D80BE1-7A7B-4789-A6E3-DF577D1AFD63} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{BD520C7D-A5D3-472B-A9D6-DEE729ADEAFD} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{0DEFC1DB-7ED8-455B-A1EB-B3E704FC97A2} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{D6E07EFD-42AB-4458-9DC6-4A69C85C108D} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{9493E26B-239C-45B3-8B6F-22554D96CA6C} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{1119409D-1BF5-4F55-893F-98AE2CE849DD} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{FFA06C2A-49E6-4892-A4C6-7917F9081CCC} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+		{5218271A-CED8-4322-8101-B0D5B4077BD4} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {150312F4-FEE3-4F55-B414-A256797E4548}
+	EndGlobalSection
+EndGlobal
