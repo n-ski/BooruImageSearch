@@ -32,12 +32,12 @@ namespace ImageSearch.WPF
 
             ViewSettings.Default.WhenAnyPropertyChanged().WhereNotNull().Subscribe(s => s.Save());
 
-            Locator.CurrentMutable.RegisterPlatformBitmapLoader();
-
-            Locator.CurrentMutable.Register(() => new SearchResultView(), typeof(IViewFor<SearchResultViewModel>));
-            Locator.CurrentMutable.Register(() => new QueueItemView(), typeof(IViewFor<QueueItemViewModel>));
-            Locator.CurrentMutable.Register(() => new FileQueueItemListView(), typeof(IViewFor<FileQueueItemViewModel>), ViewContracts.QueueList);
-            Locator.CurrentMutable.Register(() => new UriQueueItemListView(), typeof(IViewFor<UriQueueItemViewModel>), ViewContracts.QueueList);
+            Locator.CurrentMutable
+                .RegisterAnd<IViewFor<SearchResultViewModel>, SearchResultView>()
+                .RegisterAnd<IViewFor<QueueItemViewModel>, QueueItemView>()
+                .RegisterAnd<IViewFor<FileQueueItemViewModel>, FileQueueItemListView>(ViewContracts.QueueList)
+                .RegisterAnd<IViewFor<UriQueueItemViewModel>, UriQueueItemListView>(ViewContracts.QueueList)
+                .RegisterPlatformBitmapLoader();
         }
 
         internal static HttpClient HttpClient { get; }
