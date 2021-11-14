@@ -16,6 +16,10 @@ namespace ImageSearch.WPF.Views
         {
             InitializeComponent();
 
+#pragma warning disable CS0436
+            AppVersionTextBlock.Text = $"Application ver. {ThisAssembly.AssemblyInformationalVersion}";
+#pragma warning restore CS0436
+
             this.WhenActivated(d =>
             {
                 var settings = ViewSettings.Default;

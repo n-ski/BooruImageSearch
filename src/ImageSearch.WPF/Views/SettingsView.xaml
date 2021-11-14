@@ -96,14 +96,31 @@
             </StackPanel>
         </GroupBox>
 
-        <StackPanel
+        <Grid
             Grid.Row="3"
-            DockPanel.Dock="Bottom"
-            HorizontalAlignment="Right"
-            Orientation="Horizontal">
+            DockPanel.Dock="Bottom">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="Auto" />
+                <ColumnDefinition
+                    Width="1*" />
+                <ColumnDefinition
+                    Width="Auto" />
+                <ColumnDefinition
+                    Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                x:Name="AppVersionTextBlock"
+                Grid.Column="0"
+                Margin="{StaticResource MarginMedium}"
+                Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"
+                d:Text="Application ver. 1.0.0-abcde123" />
 
             <Button
                 x:Name="OkButton"
+                Grid.Column="2"
                 Width="80"
                 Margin="{StaticResource MarginMedium}"
                 Content="OK"
@@ -111,10 +128,11 @@
 
             <Button
                 x:Name="CancelButton"
+                Grid.Column="3"
                 Width="80"
                 Margin="{StaticResource MarginMedium}"
                 Content="Cancel"
                 IsCancel="True" />
-        </StackPanel>
+        </Grid>
     </Grid>
 </rui:ReactiveWindow>
