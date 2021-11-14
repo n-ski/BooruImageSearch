@@ -4,7 +4,6 @@
     <RootNamespace>BooruDotNet.Helpers</RootNamespace>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>0.1.0</Version>
   </PropertyGroup>
 
 </Project>

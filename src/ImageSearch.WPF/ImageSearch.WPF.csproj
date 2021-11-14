@@ -4,7 +4,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>0.1.0</Version>
     <AssemblyName>ImageSearch</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Images\AppIcon.ico</ApplicationIcon>
