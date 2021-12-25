@@ -3,8 +3,6 @@ using System.Net;
 using System.Net.Http;
 using System.Windows;
 using DynamicData.Binding;
-using ImageSearch.ViewModels;
-using ImageSearch.WPF.Views;
 using ReactiveUI;
 using Splat;
 using TomsToolbox.Essentials;
@@ -32,12 +30,8 @@ namespace ImageSearch.WPF
 
             ViewSettings.Default.WhenAnyPropertyChanged().WhereNotNull().Subscribe(s => s.Save());
 
-            Locator.CurrentMutable
-                .RegisterAnd<IViewFor<SearchResultViewModel>, SearchResultView>()
-                .RegisterAnd<IViewFor<QueueItemViewModel>, QueueItemView>()
-                .RegisterAnd<IViewFor<FileQueueItemViewModel>, FileQueueItemListView>(ViewContracts.QueueList)
-                .RegisterAnd<IViewFor<UriQueueItemViewModel>, UriQueueItemListView>(ViewContracts.QueueList)
-                .RegisterPlatformBitmapLoader();
+            Locator.CurrentMutable.RegisterViewsForViewModels(typeof(App).Assembly);
+            Locator.CurrentMutable.RegisterPlatformBitmapLoader();
         }
 
         internal static HttpClient HttpClient { get; }

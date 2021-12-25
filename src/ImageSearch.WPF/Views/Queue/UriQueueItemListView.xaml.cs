@@ -9,6 +9,7 @@ namespace ImageSearch.WPF.Views
     /// <summary>
     /// Interaction logic for UriQueueItemView.xaml
     /// </summary>
+    [ViewContract(ViewContracts.QueueList)]
     public partial class UriQueueItemListView : ReactiveUserControl<UriQueueItemViewModel>
     {
         public UriQueueItemListView()

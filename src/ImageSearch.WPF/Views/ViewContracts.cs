@@ -5,6 +5,6 @@
     /// </summary>
     internal static class ViewContracts
     {
-        public static string QueueList => nameof(QueueList);
+        public const string QueueList = nameof(QueueList);
     }
 }

@@ -10,6 +10,7 @@ namespace ImageSearch.WPF.Views
     /// <summary>
     /// Interaction logic for FileQueueItemView.xaml
     /// </summary>
+    [ViewContract(ViewContracts.QueueList)]
     public partial class FileQueueItemListView : ReactiveUserControl<FileQueueItemViewModel>
     {
         public FileQueueItemListView()
