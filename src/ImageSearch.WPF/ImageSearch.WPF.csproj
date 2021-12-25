@@ -30,7 +30,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="ReactiveUI.WPF" Version="16.2.6" />
+    <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
     <PackageReference Include="TomsToolbox.Wpf.Styles" Version="2.7.3" />
   </ItemGroup>
 
