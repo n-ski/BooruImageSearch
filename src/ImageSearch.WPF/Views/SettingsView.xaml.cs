@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Runtime.InteropServices;
 using ImageSearch.ViewModels;
 using ReactiveMarbles.ObservableEvents;
 using ReactiveUI;
@@ -17,7 +18,7 @@ namespace ImageSearch.WPF.Views
             InitializeComponent();
 
 #pragma warning disable CS0436
-            AppVersionTextBlock.Text = $"Application ver. {ThisAssembly.AssemblyInformationalVersion}";
+            AppVersionTextBlock.Text = $"Application ver. {ThisAssembly.AssemblyInformationalVersion}; {RuntimeInformation.FrameworkDescription}";
 #pragma warning restore CS0436
 
             this.WhenActivated(d =>
