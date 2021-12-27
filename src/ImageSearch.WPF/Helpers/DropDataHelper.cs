@@ -11,7 +11,7 @@ namespace ImageSearch.WPF.Helpers
             Debug.Assert(dataObject is object);
             Debug.Assert(dataObject.ContainsFileDropList());
 
-            string firstFileName = dataObject.GetFileDropList()[0];
+            string firstFileName = dataObject.GetFileDropList()![0]!;
             return new FileInfo(firstFileName);
         }
     }

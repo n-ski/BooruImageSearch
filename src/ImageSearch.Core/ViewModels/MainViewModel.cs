@@ -87,7 +87,7 @@ namespace ImageSearch.ViewModels
                 .InvokeCommand(this, x => x.SearchWithManyFiles);
 
             AddUri = ReactiveCommand.Create(
-                () => new Uri(ImageUri),
+                () => new Uri(ImageUri!),
                 this.WhenAnyValue(x => x.ImageUri, text => Uri.TryCreate(text, UriKind.Absolute, out _)));
 
             AddUri

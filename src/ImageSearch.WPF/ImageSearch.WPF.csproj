@@ -2,24 +2,23 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net6.0-windows</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AssemblyName>ImageSearch</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Images\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
-  <!--
-    Required in order for the project to compile with ObservableEvents generator.
-    See <https://github.com/microsoft/CsWin32/issues/7>.
-  -->
-  <PropertyGroup>
-    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-    <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
-  </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ImageSearch.Core\ImageSearch.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-windows'">
+    <PackageReference Include="ReactiveUI.WPF" Version="17.1.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +28,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
     <PackageReference Include="TomsToolbox.Wpf.Styles" Version="2.7.3" />
   </ItemGroup>
 

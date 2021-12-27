@@ -27,7 +27,9 @@ namespace ImageSearch.WPF
             ViewSettings.Default.WhenAnyPropertyChanged().WhereNotNull().Subscribe(s => s.Save());
 
             Locator.CurrentMutable.RegisterViewsForViewModels(typeof(App).Assembly);
-            Locator.CurrentMutable.RegisterPlatformBitmapLoader();
+
+            // RegisterPlatformBitmapLoader() is broken in .NET 6.
+            Locator.CurrentMutable.RegisterLazySingleton<IBitmapLoader>(() => new PlatformBitmapLoader());
 
             SingletonHttpClient.Register(() => new HttpClient(new SocketsHttpHandler { AutomaticDecompression = DecompressionMethods.All }));
         }

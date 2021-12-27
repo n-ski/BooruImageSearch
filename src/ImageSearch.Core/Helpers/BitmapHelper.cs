@@ -48,7 +48,7 @@ namespace ImageSearch.Helpers
             Debug.Assert(string.IsNullOrEmpty(resourceName) is false);
             Debug.Assert(assembly is object);
 
-            return LoadBitmapAsync(() => assembly.GetManifestResourceStream(resourceName), width, height);
+            return LoadBitmapAsync(() => assembly.GetManifestResourceStream(resourceName)!, width, height);
         }
 
         public static Task<IBitmap> LoadBitmapAsync(FileInfo file, float? width, float? height)
