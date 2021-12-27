@@ -1,14 +1,10 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
-using System.Windows.Media.Imaging;
-using BooruDotNet.Helpers;
 using ImageSearch.ViewModels;
 using ReactiveUI;
+using Splat;
 
 namespace ImageSearch.WPF.Views
 {
@@ -17,22 +13,19 @@ namespace ImageSearch.WPF.Views
     /// </summary>
     public partial class SearchResultView : ReactiveUserControl<SearchResultViewModel>
     {
-        private static readonly ConcurrentDictionary<string, BitmapImage> _faviconCache =
-            new ConcurrentDictionary<string, BitmapImage>(StringComparer.OrdinalIgnoreCase);
-
         public SearchResultView()
         {
             InitializeComponent();
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.SourceUri, v => v.FaviconImage.Source, GetFaviconFromUri)
+                this.OneWayBind(ViewModel, vm => vm.SiteIconImage, v => v.FaviconImage.Source, bitmap => bitmap?.ToNative())
                     .DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.SourceUri, v => v.FaviconImage.ToolTip)
                     .DisposeWith(d);
 
-                this.OneWayBind(ViewModel, vm => vm.ImageUri, v => v.PreviewImage.Source, ImageHelper.CreateImageFromUri)
+                this.OneWayBind(ViewModel, vm => vm.PreviewImage, v => v.PreviewImage.Source, bitmap => bitmap?.ToNative())
                     .DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.ImageSize, v => v.ImageSizeTextBlock.Text, size => $"{size.Width}x{size.Height}")
@@ -65,28 +58,6 @@ namespace ImageSearch.WPF.Views
                     .DisposeWith(d);
 
                 #endregion
-            });
-        }
-
-        private static BitmapImage GetFaviconFromUri(Uri uri)
-        {
-            if (uri is null || uri.IsAbsoluteUri is false)
-            {
-                return null;
-            }
-
-            return _faviconCache.GetOrAdd(uri.Host, host =>
-            {
-                var builder = new UriBuilder("https://www.google.com/s2/favicons")
-                {
-                    Query = $"domain={uri.Host}",
-                };
-
-                var bitmap = new BitmapImage(builder.Uri);
-
-                Debug.Assert(bitmap.CanFreeze is false);
-
-                return bitmap;
             });
         }
     }
