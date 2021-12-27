@@ -21,7 +21,7 @@ namespace ImageSearch.ViewModels
 
         public Uri ImageUri { get; }
 
-        protected override Task<IBitmap> LoadThumbnailImpl()
+        protected override Task<IBitmap> LoadThumbnailAsync()
         {
             return BitmapHelper.LoadBitmapAsync(ImageUri);
         }

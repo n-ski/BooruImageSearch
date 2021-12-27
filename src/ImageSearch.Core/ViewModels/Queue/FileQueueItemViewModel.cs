@@ -25,7 +25,7 @@ namespace ImageSearch.ViewModels
 
         public string ImageFilePath => _imageFileInfo.FullName;
 
-        protected override Task<IBitmap> LoadThumbnailImpl()
+        protected override Task<IBitmap> LoadThumbnailAsync()
         {
             return BitmapHelper.LoadBitmapAsync(_imageFileInfo, default, DesiredThumbnailHeight);
         }

@@ -46,11 +46,6 @@ namespace ImageSearch.ViewModels
                     .Execute(SelectedSearchService!)
                     .Catch(Observable.Empty<IEnumerable<SearchResultViewModel>>())
                     .Subscribe())
-                // Load the item's thumbnail.
-                .SubscribeMany(item => item
-                    .LoadThumbnail
-                    .Execute()
-                    .Subscribe())
                 // Search again when the retry button is pressed.
                 .SubscribeMany(item => item.StatusViewModel
                     .Retry

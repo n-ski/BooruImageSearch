@@ -61,9 +61,8 @@ namespace ImageSearch.ViewModels
                 .Select(tuple => $"Found {tuple.Item2} results.")
                 .BindTo(StatusViewModel, s => s.Text);
 
-            LoadThumbnail = ReactiveCommand.CreateFromTask(LoadThumbnailImpl);
-
-            LoadThumbnail.ToPropertyEx(this, x => x.Thumbnail);
+            Observable.FromAsync(() => LoadThumbnailAsync())
+                .ToPropertyEx(this, x => x.Thumbnail, null, true, RxApp.MainThreadScheduler);
         }
 
         #region Properties
@@ -80,15 +79,13 @@ namespace ImageSearch.ViewModels
 
         #region Commands
 
-        public ReactiveCommand<Unit, IBitmap> LoadThumbnail { get; }
-
         public ReactiveCommand<IFileAndUriSearchService, IEnumerable<SearchResultViewModel>> Search { get; }
 
         public ReactiveCommand<Unit, Unit> CancelSearch { get; }
 
         #endregion
 
-        protected abstract Task<IBitmap> LoadThumbnailImpl();
+        protected abstract Task<IBitmap> LoadThumbnailAsync();
 
         protected abstract Task<IEnumerable<SearchResultViewModel>> SearchImpl(IFileAndUriSearchService service, CancellationToken ct);
     }
