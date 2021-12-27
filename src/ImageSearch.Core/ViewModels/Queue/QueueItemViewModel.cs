@@ -62,14 +62,14 @@ namespace ImageSearch.ViewModels
                 .BindTo(StatusViewModel, s => s.Text);
 
             Observable.FromAsync(() => LoadThumbnailAsync())
-                .ToPropertyEx(this, x => x.Thumbnail, null, true, RxApp.MainThreadScheduler);
+                .ToPropertyEx(this, x => x.ThumbnailImage, null, true, RxApp.MainThreadScheduler);
         }
 
         #region Properties
 
         public QueueItemStatusViewModel StatusViewModel { get; }
 
-        public extern IBitmap? Thumbnail { [ObservableAsProperty] get; }
+        public extern IBitmap? ThumbnailImage { [ObservableAsProperty] get; }
 
         public ReadOnlyObservableCollection<SearchResultViewModel> SearchResults { get; }
 

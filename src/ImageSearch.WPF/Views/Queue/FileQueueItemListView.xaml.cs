@@ -19,7 +19,7 @@ namespace ImageSearch.WPF.Views
 
             this.WhenActivated(d =>
             {
-                this.OneWayBind(ViewModel, vm => vm.Thumbnail, v => v.ThumbnailImage.Source, bitmap => bitmap?.ToNative())
+                this.OneWayBind(ViewModel, vm => vm.ThumbnailImage, v => v.ThumbnailImage.Source, bitmap => bitmap?.ToNative())
                     .DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.ImageFilePath, v => v.FileNameTextBlock.Text, Path.GetFileName)
