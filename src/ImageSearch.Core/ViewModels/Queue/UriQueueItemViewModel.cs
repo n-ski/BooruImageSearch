@@ -23,7 +23,7 @@ namespace ImageSearch.ViewModels
 
         protected override Task<IBitmap> LoadThumbnailImpl()
         {
-            return BitmapHelper.LoadBitmapAsync(ImageUri, default, DesiredThumbnailHeight);
+            return BitmapHelper.LoadBitmapAsync(ImageUri);
         }
 
         protected override async Task<IEnumerable<SearchResultViewModel>> SearchImpl(IFileAndUriSearchService service, CancellationToken ct)

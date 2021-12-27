@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using ImageSearch.Net;
+using ReactiveUI;
 using Splat;
 
 namespace ImageSearch.Helpers
@@ -16,6 +17,31 @@ namespace ImageSearch.Helpers
 
             return bitmap;
         });
+
+        private static readonly MemoizingMRUCache<Uri, Task<IBitmap>> _uriCache = new MemoizingMRUCache<Uri, Task<IBitmap>>(
+            async (uri, _) =>
+            {
+                IBitmap? bitmap = null;
+
+                try
+                {
+                    using Stream stream = await SingletonHttpClient.Current.GetStreamAsync(uri);
+
+                    // Splat has a bug with unfreezable images so copy the stream to memory first.
+                    Stream memory = new MemoryStream();
+                    await stream.CopyToAsync(memory);
+                    memory.Position = 0;
+
+                    bitmap = await BitmapLoader.Current.Load(memory, default, default);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Could not load remote bitmap: {ex}");
+                }
+
+                return bitmap ?? await _errorBitmap.Value;
+            },
+            RxApp.BigCacheLimit);
 
         public static Task<IBitmap> LoadBitmapAsync(string resourceName, Assembly assembly, float? width, float? height)
         {
@@ -33,40 +59,28 @@ namespace ImageSearch.Helpers
             return LoadBitmapAsync(() => file.OpenRead(), width, height);
         }
 
-        public static Task<IBitmap> LoadBitmapAsync(Uri uri, float? width, float? height)
+        public static Task<IBitmap> LoadBitmapAsync(Uri uri)
         {
             Debug.Assert(uri is object);
 
-            return LoadBitmapAsync(() => SingletonHttpClient.Current.GetStreamAsync(uri), width, height);
+            return _uriCache.Get(uri);
         }
 
-        private static Task<IBitmap> LoadBitmapAsync(Func<Stream> func, float? width, float? height)
+        private static async Task<IBitmap> LoadBitmapAsync(Func<Stream> streamFactory, float? width, float? height)
         {
-            Debug.Assert(func is object);
+            Debug.Assert(streamFactory is object);
 
-            return LoadBitmapAsync(() => Task.Run(func), width, height);
-        }
-
-        private static async Task<IBitmap> LoadBitmapAsync(Func<Task<Stream>> func, float? width, float? height)
-        {
-            Debug.Assert(func is object);
-
-            IBitmap? bitmap;
+            IBitmap? bitmap = null;
 
             try
             {
-                using Stream stream = await func();
+                using Stream stream = streamFactory();
 
-                // Splat has a bug with unfreezable images so copy the stream to memory first.
-                Stream memory = new MemoryStream();
-                await stream.CopyToAsync(memory);
-                memory.Position = 0;
-
-                bitmap = await BitmapLoader.Current.Load(memory, width, height);
+                bitmap = await BitmapLoader.Current.Load(stream, width, height);
             }
-            catch
+            catch (Exception ex)
             {
-                bitmap = null;
+                Debug.WriteLine($"Could not load local bitmap: {ex}");
             }
 
             return bitmap ?? await _errorBitmap.Value;

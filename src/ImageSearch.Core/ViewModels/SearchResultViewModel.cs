@@ -30,13 +30,13 @@ namespace ImageSearch.ViewModels
 
                     return builder.Uri;
                 })
-                .Select(uri => Observable.FromAsync(() => BitmapHelper.LoadBitmapAsync(uri, default, default)))
+                .Select(uri => Observable.FromAsync(() => BitmapHelper.LoadBitmapAsync(uri)))
                 .Switch()
                 .ToPropertyEx(this, x => x.SiteIconImage, null, true, RxApp.MainThreadScheduler);
 
             Observable.Return(ImageUri)
                 .WhereNotNull()
-                .Select(uri => Observable.FromAsync(() => BitmapHelper.LoadBitmapAsync(uri, default, default)))
+                .Select(uri => Observable.FromAsync(() => BitmapHelper.LoadBitmapAsync(uri)))
                 .Switch()
                 .ToPropertyEx(this, x => x.PreviewImage, null, true, RxApp.MainThreadScheduler);
 

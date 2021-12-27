@@ -17,8 +17,6 @@ namespace ImageSearch.ViewModels
 {
     public abstract class QueueItemViewModel : ReactiveObject
     {
-        protected const float DesiredThumbnailHeight = 50;
-
         protected QueueItemViewModel()
         {
             StatusViewModel = new QueueItemStatusViewModel();
@@ -75,6 +73,8 @@ namespace ImageSearch.ViewModels
         public extern IBitmap? Thumbnail { [ObservableAsProperty] get; }
 
         public ReadOnlyObservableCollection<SearchResultViewModel> SearchResults { get; }
+
+        protected float DesiredThumbnailHeight => 50;
 
         #endregion
 
