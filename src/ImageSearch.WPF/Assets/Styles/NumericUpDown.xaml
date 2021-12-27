@@ -4,8 +4,7 @@
     xmlns:styles="urn:TomsToolbox.Wpf.Styles"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
-    <DataTemplate
-        x:Key="DefaultWatermarkTemplate">
+    <DataTemplate x:Key="DefaultWatermarkTemplate">
 
         <ContentControl
             Margin="0,0,3,0"
@@ -28,8 +27,7 @@
         <Setter Property="WatermarkTemplate" Value="{StaticResource DefaultWatermarkTemplate}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="Control">
+                <ControlTemplate TargetType="Control">
                     <xctk:ButtonSpinner
                         x:Name="PART_Spinner"
                         HorizontalContentAlignment="Stretch"

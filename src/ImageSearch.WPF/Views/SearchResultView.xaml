@@ -14,16 +14,14 @@
 
     <UserControl.Resources>
 
-        <Duration
-            x:Key="MouseEnterEffectDuration">
+        <Duration x:Key="MouseEnterEffectDuration">
             0:0:0.1
         </Duration>
     </UserControl.Resources>
 
     <UserControl.Triggers>
 
-        <EventTrigger
-            RoutedEvent="MouseEnter">
+        <EventTrigger RoutedEvent="MouseEnter">
 
             <BeginStoryboard>
 
@@ -37,8 +35,7 @@
             </BeginStoryboard>
         </EventTrigger>
 
-        <EventTrigger
-            RoutedEvent="MouseLeave">
+        <EventTrigger RoutedEvent="MouseLeave">
 
             <BeginStoryboard>
 
@@ -62,10 +59,8 @@
         Background="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=Background, Mode=OneWay}">
 
         <Grid.RowDefinitions>
-            <RowDefinition
-                Height="Auto" />
-            <RowDefinition
-                Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Image

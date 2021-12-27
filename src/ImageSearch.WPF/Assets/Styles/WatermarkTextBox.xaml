@@ -4,8 +4,7 @@
     xmlns:styles="urn:TomsToolbox.Wpf.Styles"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
-    <DataTemplate
-        x:Key="DefaultWatermarkTemplate">
+    <DataTemplate x:Key="DefaultWatermarkTemplate">
 
         <ContentControl
             Content="{Binding}"
@@ -13,8 +12,7 @@
             Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
     </DataTemplate>
 
-    <Style
-        TargetType="{x:Type xctk:WatermarkTextBox}">
+    <Style TargetType="{x:Type xctk:WatermarkTextBox}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static styles:ResourceKeys.BorderBrush}}" />
@@ -27,8 +25,7 @@
         <Setter Property="WatermarkTemplate" Value="{StaticResource DefaultWatermarkTemplate}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type xctk:WatermarkTextBox}">
+                <ControlTemplate TargetType="{x:Type xctk:WatermarkTextBox}">
                     <Grid>
                         <Border
                             x:Name="Border"

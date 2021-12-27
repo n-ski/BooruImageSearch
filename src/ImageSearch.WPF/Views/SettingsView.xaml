@@ -16,18 +16,13 @@
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
 
-    <Grid
-        Margin="{StaticResource MarginMedium}">
+    <Grid Margin="{StaticResource MarginMedium}">
 
         <Grid.RowDefinitions>
-            <RowDefinition
-                Height="Auto" />
-            <RowDefinition
-                Height="Auto" />
-            <RowDefinition
-                Height="20" />
-            <RowDefinition
-                Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <GroupBox
@@ -36,8 +31,7 @@
 
             <StackPanel>
 
-                <DockPanel
-                    LastChildFill="False">
+                <DockPanel LastChildFill="False">
 
                     <TextBlock
                         DockPanel.Dock="Left"
@@ -68,8 +62,7 @@
 
             <StackPanel>
 
-                <DockPanel
-                    LastChildFill="False">
+                <DockPanel LastChildFill="False">
 
                     <CheckBox
                         x:Name="EnableFilteringCheckBox"
@@ -101,14 +94,10 @@
             DockPanel.Dock="Bottom">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition
-                    Width="Auto" />
-                <ColumnDefinition
-                    Width="1*" />
-                <ColumnDefinition
-                    Width="Auto" />
-                <ColumnDefinition
-                    Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
             <TextBlock

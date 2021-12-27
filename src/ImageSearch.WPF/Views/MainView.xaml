@@ -21,12 +21,9 @@
 
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition
-                Width="1*" />
-            <ColumnDefinition
-                Width="4" />
-            <ColumnDefinition
-                Width="3*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
         <DockPanel
@@ -45,8 +42,7 @@
                 Margin="{StaticResource MarginMedium}"
                 Watermark="Type URL and press Enter to search" />
 
-            <DockPanel
-                DockPanel.Dock="Top">
+            <DockPanel DockPanel.Dock="Top">
 
                 <TextBlock
                     DockPanel.Dock="Left"
@@ -62,8 +58,7 @@
 
                         <DataTemplate>
 
-                            <views:SearchServiceView
-                                ViewModel="{Binding}" />
+                            <views:SearchServiceView ViewModel="{Binding}" />
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
@@ -80,15 +75,12 @@
                 TextTrimming="CharacterEllipsis"
                 TextWrapping="Wrap" />
 
-            <Grid
-                DockPanel.Dock="Bottom">
+            <Grid DockPanel.Dock="Bottom">
 
                 <Grid.ColumnDefinitions>
 
-                    <ColumnDefinition
-                        Width="1*" />
-                    <ColumnDefinition
-                        Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
                 <Button
@@ -133,8 +125,7 @@
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollBarVisibility="Auto">
 
-            <views:QueueItemView
-                x:Name="SelectedQueueItemView" />
+            <views:QueueItemView x:Name="SelectedQueueItemView" />
         </ScrollViewer>
     </Grid>
 </rui:ReactiveWindow>

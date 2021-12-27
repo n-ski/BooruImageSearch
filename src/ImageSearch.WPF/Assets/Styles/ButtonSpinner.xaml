@@ -4,17 +4,14 @@
     xmlns:styles="urn:TomsToolbox.Wpf.Styles"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
-    <Geometry
-        x:Key="UpArrowGeometry">
+    <Geometry x:Key="UpArrowGeometry">
         M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z
     </Geometry>
-    <Geometry
-        x:Key="DownArrowGeometry">
+    <Geometry x:Key="DownArrowGeometry">
         M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z
     </Geometry>
 
-    <DataTemplate
-        x:Key="IncreaseGlyphNormalKey">
+    <DataTemplate x:Key="IncreaseGlyphNormalKey">
         <Path
             Width="9"
             Height="5"
@@ -26,8 +23,7 @@
             SnapsToDevicePixels="True" />
     </DataTemplate>
 
-    <DataTemplate
-        x:Key="IncreaseGlyphDisabledKey">
+    <DataTemplate x:Key="IncreaseGlyphDisabledKey">
         <Path
             Width="9"
             Height="5"
@@ -39,8 +35,7 @@
             SnapsToDevicePixels="True" />
     </DataTemplate>
 
-    <DataTemplate
-        x:Key="DecreaseGlyphNormalKey">
+    <DataTemplate x:Key="DecreaseGlyphNormalKey">
         <Path
             Width="9"
             Height="5"
@@ -52,8 +47,7 @@
             SnapsToDevicePixels="True" />
     </DataTemplate>
 
-    <DataTemplate
-        x:Key="DecreaseGlyphDisabledKey">
+    <DataTemplate x:Key="DecreaseGlyphDisabledKey">
         <Path
             Width="9"
             Height="5"
@@ -65,8 +59,7 @@
             SnapsToDevicePixels="True" />
     </DataTemplate>
 
-    <Style
-        TargetType="{x:Type xctk:ButtonSpinner}">
+    <Style TargetType="{x:Type xctk:ButtonSpinner}">
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static styles:ResourceKeys.BorderBrush}}" />
@@ -78,8 +71,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate
-                    TargetType="{x:Type xctk:ButtonSpinner}">
+                <ControlTemplate TargetType="{x:Type xctk:ButtonSpinner}">
                     <Border
                         x:Name="Border"
                         Background="{TemplateBinding Background}"
@@ -88,12 +80,8 @@
                         SnapsToDevicePixels="True">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition
-                                    x:Name="firstContentColumn"
-                                    Width="*" />
-                                <ColumnDefinition
-                                    x:Name="secondContentColumn"
-                                    Width="Auto" />
+                                <ColumnDefinition x:Name="firstContentColumn" Width="*" />
+                                <ColumnDefinition x:Name="secondContentColumn" Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <ContentPresenter
                                 x:Name="contentPresenter"
@@ -107,10 +95,8 @@
                                 Grid.Column="1"
                                 Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition
-                                        Height="*" />
-                                    <RowDefinition
-                                        Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <RepeatButton
                                     x:Name="PART_IncreaseButton"

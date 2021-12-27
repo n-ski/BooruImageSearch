@@ -12,8 +12,7 @@
 
                 <ItemsPanelTemplate>
 
-                    <WrapPanel
-                        HorizontalAlignment="Center" />
+                    <WrapPanel HorizontalAlignment="Center" />
                 </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>
