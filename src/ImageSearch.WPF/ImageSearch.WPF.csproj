@@ -19,7 +19,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BooruDotNet.Helpers.WPF\BooruDotNet.Helpers.WPF.csproj" />
     <ProjectReference Include="..\ImageSearch.Core\ImageSearch.Core.csproj" />
   </ItemGroup>
 

@@ -9,12 +9,12 @@ using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using BooruDotNet.Helpers;
 using DynamicData;
 using DynamicData.Binding;
 using GongSolutions.Wpf.DragDrop;
 using ImageSearch.Helpers;
 using ImageSearch.ViewModels;
+using ImageSearch.WPF.Helpers;
 using ReactiveMarbles.ObservableEvents;
 using ReactiveUI;
 

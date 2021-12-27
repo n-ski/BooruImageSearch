@@ -41,8 +41,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageSearch.Core", "ImageSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageSearch.WPF", "ImageSearch.WPF\ImageSearch.WPF.csproj", "{E955FAE7-14BE-49B5-903D-0E4A9A21BCDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooruDotNet.Helpers.WPF", "BooruDotNet.Helpers.WPF\BooruDotNet.Helpers.WPF.csproj", "{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,10 +99,6 @@ Global
 		{E955FAE7-14BE-49B5-903D-0E4A9A21BCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E955FAE7-14BE-49B5-903D-0E4A9A21BCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E955FAE7-14BE-49B5-903D-0E4A9A21BCDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,7 +118,6 @@ Global
 		{5218271A-CED8-4322-8101-B0D5B4077BD4} = {1617730D-5C5D-4103-A0A6-E77EF8D92B51}
 		{9CC830FD-9A57-4B65-860D-D8E912BE5165} = {8707F559-2505-457B-AB22-D061024E5E3B}
 		{E955FAE7-14BE-49B5-903D-0E4A9A21BCDE} = {8707F559-2505-457B-AB22-D061024E5E3B}
-		{82DE8AA0-B9B6-43C5-B849-AC4E85497BA1} = {8707F559-2505-457B-AB22-D061024E5E3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {150312F4-FEE3-4F55-B414-A256797E4548}
