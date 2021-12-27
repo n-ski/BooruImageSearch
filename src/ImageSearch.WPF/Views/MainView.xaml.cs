@@ -12,7 +12,6 @@ using System.Windows.Media.Imaging;
 using DynamicData;
 using DynamicData.Binding;
 using GongSolutions.Wpf.DragDrop;
-using ImageSearch.Helpers;
 using ImageSearch.ViewModels;
 using ImageSearch.WPF.Helpers;
 using ReactiveMarbles.ObservableEvents;
@@ -25,12 +24,13 @@ namespace ImageSearch.WPF.Views
     /// </summary>
     public partial class MainView : ReactiveWindow<MainViewModel>, IDropTarget
     {
-        private static readonly FileHelper.FileType[] _droppableFileTypes =
+        private static readonly string[] _droppableFileTypes =
         {
-            FileHelper.FileType.Bmp,
-            FileHelper.FileType.Gif,
-            FileHelper.FileType.Jpeg,
-            FileHelper.FileType.Png,
+            ".bmp",
+            ".gif",
+            ".jpeg",
+            ".jpg",
+            ".png",
         };
 
         public MainView()
@@ -259,7 +259,7 @@ namespace ImageSearch.WPF.Views
             {
                 foreach (string filePath in data.GetFileDropList())
                 {
-                    if (FileHelper.IsAnyFileType(filePath, _droppableFileTypes))
+                    if (IsValidFile(filePath))
                     {
                         dropInfo.Effects = DragDropEffects.Link;
                         return;
@@ -275,10 +275,25 @@ namespace ImageSearch.WPF.Views
             var files = ((DataObject)dropInfo.Data)
                 .GetFileDropList()
                 .Cast<string>()
-                .Where(filePath => FileHelper.IsAnyFileType(filePath, _droppableFileTypes))
+                .Where(IsValidFile)
                 .Select(path => new FileInfo(path));
 
             ViewModel.SearchWithManyFiles.Execute(files).Subscribe();
+        }
+
+        private static bool IsValidFile(string filePath)
+        {
+            string fileExtension = Path.GetExtension(filePath);
+
+            foreach (string validExtension in _droppableFileTypes)
+            {
+                if (validExtension.Equals(fileExtension, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
