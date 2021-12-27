@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using ImageSearch.Net;
 using Splat;
 
 namespace ImageSearch.Helpers
@@ -33,12 +33,11 @@ namespace ImageSearch.Helpers
             return LoadBitmapAsync(() => file.OpenRead(), width, height);
         }
 
-        public static Task<IBitmap> LoadBitmapAsync(Uri uri, HttpClient httpClient, float? width, float? height)
+        public static Task<IBitmap> LoadBitmapAsync(Uri uri, float? width, float? height)
         {
             Debug.Assert(uri is object);
-            Debug.Assert(httpClient is object);
 
-            return LoadBitmapAsync(() => httpClient.GetStreamAsync(uri), width, height);
+            return LoadBitmapAsync(() => SingletonHttpClient.Current.GetStreamAsync(uri), width, height);
         }
 
         private static Task<IBitmap> LoadBitmapAsync(Func<Stream> func, float? width, float? height)

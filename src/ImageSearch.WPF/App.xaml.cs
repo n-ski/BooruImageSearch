@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Windows;
 using DynamicData.Binding;
+using ImageSearch.Net;
 using ReactiveUI;
 using Splat;
 using TomsToolbox.Essentials;
@@ -23,18 +24,13 @@ namespace ImageSearch.WPF
 
         static App()
         {
-            HttpClient = new HttpClient(new SocketsHttpHandler
-            {
-                AutomaticDecompression = DecompressionMethods.All,
-            });
-
             ViewSettings.Default.WhenAnyPropertyChanged().WhereNotNull().Subscribe(s => s.Save());
 
             Locator.CurrentMutable.RegisterViewsForViewModels(typeof(App).Assembly);
             Locator.CurrentMutable.RegisterPlatformBitmapLoader();
-        }
 
-        internal static HttpClient HttpClient { get; }
+            SingletonHttpClient.Register(() => new HttpClient(new SocketsHttpHandler { AutomaticDecompression = DecompressionMethods.All }));
+        }
 
         protected override void OnStartup(StartupEventArgs e)
         {

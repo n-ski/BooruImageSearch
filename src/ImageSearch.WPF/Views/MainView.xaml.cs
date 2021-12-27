@@ -36,7 +36,7 @@ namespace ImageSearch.WPF.Views
         public MainView()
         {
             InitializeComponent();
-            ViewModel = new MainViewModel(App.HttpClient);
+            ViewModel = new MainViewModel();
 
             GongSolutions.Wpf.DragDrop.DragDrop.SetDropHandler(QueueItemsListBox, this);
             GongSolutions.Wpf.DragDrop.DragDrop.SetIsDropTarget(QueueItemsListBox, true);

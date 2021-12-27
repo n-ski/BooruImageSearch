@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Net.Http;
 using BooruDotNet.Search.Services;
+using ImageSearch.Net;
 using ImageSearch.ViewModels;
 
-namespace ImageSearch
+namespace ImageSearch.Helpers
 {
-    internal static class SearchServices
+    internal static class SearchServiceHelper
     {
-        internal static ReadOnlyCollection<SearchServiceViewModel> Initialize(HttpClient httpClient)
+        internal static ReadOnlyCollection<SearchServiceViewModel> GetServices()
         {
-            Debug.Assert(httpClient is object);
+            HttpClient httpClient = SingletonHttpClient.Current;
 
             SearchServiceViewModel[] services =
             {

@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using BooruDotNet.Search.Services;
 using DynamicData;
 using DynamicData.Binding;
+using ImageSearch.Helpers;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using Validation;
 
 namespace ImageSearch.ViewModels
 {
     public class MainViewModel : ReactiveObject
     {
-        private readonly HttpClient _httpClient;
         private readonly SourceList<QueueItemViewModel> _itemsQueue;
         private static readonly TimeSpan _delayBetweenMultipleSearches = TimeSpan.FromMilliseconds(100);
 
-        public MainViewModel(HttpClient httpClient)
+        public MainViewModel()
         {
-            _httpClient = Requires.NotNull(httpClient, nameof(httpClient));
             _itemsQueue = new SourceList<QueueItemViewModel>();
 
-            SearchServices = ImageSearch.SearchServices.Initialize(_httpClient);
+            SearchServices = SearchServiceHelper.GetServices();
             SelectedSearchService = SearchServices.First();
 
             SearchWithUri = ReactiveCommand.CreateFromObservable((Uri uri) => SearchWithUriImpl(uri));
@@ -152,7 +149,7 @@ namespace ImageSearch.ViewModels
 
         private IObservable<Unit> SearchWithUriImpl(Uri uri)
         {
-            var item = new UriQueueItemViewModel(uri, _httpClient);
+            var item = new UriQueueItemViewModel(uri);
 
             _itemsQueue.Add(item);
 
