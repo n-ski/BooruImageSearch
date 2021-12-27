@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reactive.Threading.Tasks;
+using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BooruDotNet.Search.Results;
@@ -24,9 +24,8 @@ namespace ImageSearch.ViewModels
             _service = Requires.NotNull(service, nameof(service));
             Name = name;
 
-            BitmapHelper.LoadBitmapAsync(iconResourceName, typeof(SearchServiceViewModel).Assembly, _defaultIconSize, _defaultIconSize)
-                .ToObservable()
-                .ToPropertyEx(this, x => x.Icon, scheduler: RxApp.MainThreadScheduler);
+            Observable.FromAsync(() => BitmapHelper.LoadBitmapAsync(iconResourceName, typeof(SearchServiceViewModel).Assembly, _defaultIconSize, _defaultIconSize))
+                .ToPropertyEx(this, x => x.Icon, null, true, RxApp.MainThreadScheduler);
         }
 
         public string Name { get; }
